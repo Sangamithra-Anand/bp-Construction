@@ -1,0 +1,343 @@
+@import url('https://fonts.googleapis.com/css2?family=Cooper+Black:wght@700&display=swap');
+
+body {
+  font-family: 'Cooper Black', 'Arial Black', Arial, sans-serif !important;
+}
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --font-size: 14px;
+  --background: #ffffff;
+  --foreground: #4A5568;
+  --card: #ffffff;
+  --card-foreground: #4A5568;
+  --popover: #ffffff;
+  --popover-foreground: #4A5568;
+  --primary: #0A2540;
+  --primary-foreground: #ffffff;
+  --secondary: #E2E8F0;
+  --secondary-foreground: #0A2540;
+  --muted: #F1F5F9;
+  --muted-foreground: #64748B;
+  --accent: #FF6B35;
+  --accent-foreground: #ffffff;
+  --destructive: #DC2626;
+  --destructive-foreground: #ffffff;
+  --border: rgba(0, 0, 0, 0.1);
+  --input: transparent;
+  --input-background: #F1F5F9;
+  --switch-background: #CBD5E1;
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  --ring: #FF6B35;
+  --chart-1: #0A2540;
+  --chart-2: #FF6B35;
+  --chart-3: #4A5568;
+  --chart-4: #64748B;
+  --chart-5: #E2E8F0;
+  --radius: 0.5rem;
+  --sidebar: #F1F5F9;
+  --sidebar-foreground: #4A5568;
+  --sidebar-primary: #0A2540;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #E2E8F0;
+  --sidebar-accent-foreground: #0A2540;
+  --sidebar-border: #E2E8F0;
+  --sidebar-ring: #FF6B35;
+  
+  /* Modern Construction Brand Colors */
+  --modern-orange: #FF6B35;
+  --modern-orange-hover: #E55A28;
+  --modern-navy: #0A2540;
+  --modern-steel: #4A5568;
+  --modern-light-gray: #F1F5F9;
+  --modern-cool-gray: #E2E8F0;
+  --success-green: #059669;
+  --error-red: #DC2626;
+  --info-blue: #0284C7;
+}
+
+.dark {
+  --background: #0A2540;
+  --foreground: #ffffff;
+  --card: #0A2540;
+  --card-foreground: #ffffff;
+  --popover: #0A2540;
+  --popover-foreground: #ffffff;
+  --primary: #FF6B35;
+  --primary-foreground: #ffffff;
+  --secondary: #4A5568;
+  --secondary-foreground: #ffffff;
+  --muted: #1E3A5F;
+  --muted-foreground: #CBD5E1;
+  --accent: #FF6B35;
+  --accent-foreground: #ffffff;
+  --destructive: #DC2626;
+  --destructive-foreground: #ffffff;
+  --border: #1E3A5F;
+  --input: #1E3A5F;
+  --ring: #FF6B35;
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  --chart-1: #FF6B35;
+  --chart-2: #4A5568;
+  --chart-3: #E2E8F0;
+  --chart-4: #ffffff;
+  --chart-5: #0A2540;
+  --sidebar: #0A2540;
+  --sidebar-foreground: #ffffff;
+  --sidebar-primary: #FF6B35;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #1E3A5F;
+  --sidebar-accent-foreground: #ffffff;
+  --sidebar-border: #1E3A5F;
+  --sidebar-ring: #FF6B35;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-input-background: var(--input-background);
+  --color-switch-background: var(--switch-background);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 2px);
+  --radius-md: var(--radius);
+  --radius-lg: calc(var(--radius) + 2px);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  
+  /* Modern Construction Brand Colors */
+  --color-modern-orange: var(--modern-orange);
+  --color-modern-orange-hover: var(--modern-orange-hover);
+  --color-modern-navy: var(--modern-navy);
+  --color-modern-steel: var(--modern-steel);
+  --color-modern-light-gray: var(--modern-light-gray);
+  --color-modern-cool-gray: var(--modern-cool-gray);
+  --color-success-green: var(--success-green);
+  --color-error-red: var(--error-red);
+  --color-info-blue: var(--info-blue);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-size: var(--font-size);
+  }
+}
+
+/**
+ * Modern Construction Button Styles
+ */
+@layer components {
+  .btn-construction-primary {
+    @apply inline-flex items-center justify-center rounded-lg font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50;
+    height: 48px;
+    padding: 16px 24px;
+    font-size: 16px;
+    border-radius: 8px;
+    background-color: var(--modern-orange);
+    color: #ffffff;
+  }
+  
+  .btn-construction-primary:hover {
+    background-color: var(--modern-orange-hover);
+    box-shadow: 0 4px 12px rgba(255, 107, 53, 0.3);
+  }
+  
+  .btn-construction-secondary {
+    @apply inline-flex items-center justify-center rounded-lg font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50;
+    height: 44px;
+    padding: 14px 22px;
+    font-size: 15px;
+    border-radius: 8px;
+    background-color: transparent;
+    border: 1px solid var(--modern-navy);
+    color: var(--modern-navy);
+  }
+  
+  .btn-construction-secondary:hover {
+    background-color: var(--modern-navy);
+    color: #601212;
+  }
+  
+  .btn-construction-ghost {
+    @apply inline-flex items-center justify-center font-normal transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50;
+    font-size: 14px;
+    color: var(--modern-steel);
+    background-color: transparent;
+    border: none;
+    text-decoration: underline;
+  }
+  
+  .btn-construction-ghost:hover {
+    text-decoration: underline;
+    color: var(--modern-navy);
+  }
+}
+
+/**
+ * Base typography. This is not applied to elements which have an ancestor with a Tailwind text class.
+ */
+@layer base {
+  :where(:not(:has([class*=" text-"]), :not(:has([class^="text-"])))) {
+    h1 {
+      font-size: 2.5rem;
+      font-weight: var(--font-weight-medium);
+      line-height: 1.2;
+      color: var(--modern-navy);
+    }
+
+    h2 {
+      font-size: 2rem;
+      font-weight: var(--font-weight-medium);
+      line-height: 1.3;
+      color: var(--modern-navy);
+    }
+
+    h3 {
+      font-size: 1.5rem;
+      font-weight: var(--font-weight-medium);
+      line-height: 1.4;
+      color: var(--modern-navy);
+    }
+
+    h4 {
+      font-size: 1.25rem;
+      font-weight: var(--font-weight-medium);
+      line-height: 1.4;
+      color: var(--modern-navy);
+    }
+
+    p {
+      font-size: 1rem;
+      font-weight: var(--font-weight-normal);
+      line-height: 1.6;
+      color: var(--modern-steel);
+    }
+
+    label {
+      font-size: 1rem;
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+      color: var(--modern-navy);
+    }
+
+    button {
+      font-size: 1rem;
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    input {
+      font-size: 1rem;
+      font-weight: var(--font-weight-normal);
+      line-height: 1.5;
+      color: var(--modern-steel);
+    }
+  }
+}
+
+/**
+ * Modern Construction section backgrounds
+ */
+@layer utilities {
+  .section-hero {
+    background-color: var(--modern-navy);
+    color: #ffffff;
+  }
+  
+  .section-alternate {
+    background-color: #F1F5F9;
+  }
+  
+  .section-concrete {
+    background-color: var(--modern-cool-gray);
+  }
+  
+  .section-footer {
+    background-color: var(--modern-navy);
+    color: #ffffff;
+  }
+}
+
+html {
+  font-size: var(--font-size);
+}
+
+.logo-navbar {
+  height: 64px !important;
+  width: 64px !important;
+  max-height: 64px !important;
+  max-width: 64px !important;
+  object-fit: contain;
+  border-radius: 8px;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* --- Premium Navbar Animation Enhancements --- */
+
+/* Smooth underline animation for nav links */
+button.relative::after {
+  transform-origin: left;
+  transform: scaleX(0);
+}
+
+button.relative:hover::after,
+button.relative.active::after {
+  transform: scaleX(1);
+}
+
+button.relative::after {
+  transition: transform 0.35s ease-in-out, background-color 0.3s ease;
+}
+
+/* Subtle shadow that appears as you scroll */
+nav.sticky {
+  transition: box-shadow 0.4s ease, backdrop-filter 0.4s ease;
+}
+
+nav.sticky.h-16 {
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(12px);
+}
+
+/* Smooth hover lift for Request a Quote button */
+button.rounded-xl:hover {
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 8px 20px rgba(255, 107, 53, 0.3);
+}
