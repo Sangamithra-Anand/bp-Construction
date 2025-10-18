@@ -8,41 +8,41 @@ interface ServicesPageProps {
 export function ServicesPage({ onPageChange }: ServicesPageProps) {
   const services = [
     {
-      name: 'Residential Construction',
-      description: 'From custom homes to renovations, we bring your vision to life with exceptional craftsmanship and attention to detail.',
+      name: 'RESIDENTIAL CONSTRUCTION',
+      description: 'We transform architectural dreams into tangible masterpieces and precision across every facet of residential construction and renewal.',
       icon: HomeIcon,
       features: ['Custom Home Building', 'Home Renovations', 'Kitchen & Bath Remodeling', 'Home Additions']
     },
     {
-      name: 'Commercial Projects',
-      description: 'Complete commercial construction solutions for office buildings, retail spaces, and mixed-use developments.',
+      name: 'COMMERCIAL PROJECTS',
+      description: 'We orchestrate end-to-end commercial construction excellence, creating inspiring workspaces, vibrant retail environments, and multifaceted developments that drive business success and community engagement.',
       icon: BuildingOfficeIcon,
-      features: ['Office Buildings', 'Retail Spaces', 'Restaurants', 'Mixed-Use Developments']
+      features: ['Office Buildings', 'Retail Spaces', 'Mixed-Use Developments']
     },
     {
-      name: 'Industrial Solutions',
-      description: 'Specialized construction for manufacturing facilities, warehouses, and industrial complexes.',
+      name: 'INDUSTRIAL SOLUTIONS',
+      description: 'Expert industrial construction services tailored to the demanding requirements of modern manufacturing, warehousing, and distribution operations—where functionality meets structural excellence.',
       icon: CogIcon,
       features: ['Manufacturing Facilities', 'Warehouses', 'Distribution Centers', 'Industrial Parks']
     },
-    {
-      name: 'Design-Build Services',
-      description: 'Streamlined project delivery combining design and construction expertise under one roof.',
-      icon: WrenchScrewdriverIcon,
-      features: ['Conceptual Design', 'Value Engineering', 'Construction Management', 'Turnkey Solutions']
-    },
-    {
-      name: 'General Contracting',
-      description: 'Full-service general contracting for projects of all sizes and complexities.',
-      icon: TruckIcon,
-      features: ['Site Development', 'Subcontractor Management', 'Quality Control', 'Schedule Management']
-    },
-    {
-      name: 'Project Management',
-      description: 'Comprehensive project oversight ensuring on-time, on-budget delivery with superior quality.',
-      icon: ClipboardDocumentCheckIcon,
-      features: ['Budget Management', 'Schedule Coordination', 'Risk Management', 'Quality Assurance']
-    }
+    // {
+    //   name: 'DESIGN-BUILD SERVICES',
+    //   description: 'Streamlined project delivery combining design and construction expertise under one roof.',
+    //   icon: WrenchScrewdriverIcon,
+    //   features: ['Conceptual Design', 'Value Engineering', 'Construction Management', 'Turnkey Solutions']
+    // },
+     {
+       name: 'GENERAL CONTRACTING',
+       description: 'End-to-end general contracting expertise delivering flawless project execution through strategic site development, masterful trade coordination, and uncompromising commitment to quality and timelines.',
+       icon: TruckIcon,
+       features: ['Site Development', 'Subcontractor Management', 'Quality Control', 'Schedule Management']
+     }
+    // {
+    //   name: 'PROJECT MANAGEMENT',
+    //   description: 'Comprehensive project oversight ensuring on-time, on-budget delivery with superior quality.',
+    //   icon: ClipboardDocumentCheckIcon,
+    //   features: ['Budget Management', 'Schedule Coordination', 'Risk Management', 'Quality Assurance']
+    // }
   ];
 
   return (
@@ -62,7 +62,7 @@ export function ServicesPage({ onPageChange }: ServicesPageProps) {
       {/* Services Grid */}
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
             {services.map((service, index) => (
               <Card key={index} className="hover:shadow-lg transition-shadow duration-200">
                 <CardHeader>
