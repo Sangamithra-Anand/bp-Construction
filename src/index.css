@@ -2358,6 +2358,32 @@
     color: var(--modern-navy);
     text-decoration: underline;
   }
+
+  .nav-anim-btn {
+  position: relative;
+  overflow: hidden;
+}
+.nav-anim-btn::before {
+  content: "";
+  position: absolute;
+  left: 0; top: 0; bottom: 0; width: 0;
+  background: #FF6B35; /* Only one color (orange) */
+  z-index: 0;
+  transition: width 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 6px;
+}
+.nav-anim-btn:hover::before {
+  width: 100%;
+}
+.nav-anim-btn span {
+  position: relative;
+  z-index: 1;
+  transition: color 0.3s;
+}
+.nav-anim-btn:hover span {
+  color: #fff;
+}
+
 }
 
 html {

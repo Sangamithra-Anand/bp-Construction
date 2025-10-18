@@ -132,7 +132,7 @@ export function BlogPage() {
       </section>
 
       {/* Newsletter CTA */}
-      <section className="py-16">
+      {/* <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Card className="bg-accent text-white">
             <CardContent className="p-8 md:p-12 text-center">
@@ -156,7 +156,7 @@ export function BlogPage() {
             </CardContent>
           </Card>
         </div>
-      </section>
-    </div>
+      </section> */}
+    </div> 
   );
 }
