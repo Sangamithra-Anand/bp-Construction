@@ -40,8 +40,7 @@ export function AboutPage() {
     // { name: "LEED Certification", description: "Leadership in Energy & Environmental Design" },
     { name: "NAHB Member", description: "National Association of Home Builders" },
     { name: "Better Business Bureau", description: "A+ Rating" },
-    { name: "State Licensed", description: "Fully Licensed & Insured" }
-    // { name: "OSHA Compliance", description: "Occupational Safety & Health" },
+    { name: "State Licensed", description: "Fully Licensed & Insured" },
     {
       name: "SSL Certification",
       description: "Secure Sockets Layer Certification",

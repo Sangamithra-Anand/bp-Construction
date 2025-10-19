@@ -19,19 +19,6 @@ export function Navigation({ currentPage, onPageChange }: NavigationProps) {
 
   return (
     <div className="relative bg-white shadow-md sticky top-0 z-50 border-b border-gray-200 transition-all duration-300 h-24">
-      {/* Pop-out Logo */}
-      <div className="absolute left-6 -top-10 z-30">
-        <img
-          src="/bp_logo.jpg"
-          alt="BP Construction Logo"
-          className="rounded-lg shadow-xl bg-white p-2"
-          style={{
-            height: "100px",
-            width: "100px",
-            objectFit: "contain"
-          }}
-        />
-      </div>
       <Disclosure
         as="nav"
         className="w-full h-24 flex items-center"
@@ -42,8 +29,19 @@ export function Navigation({ currentPage, onPageChange }: NavigationProps) {
         {({ open }) => (
           <>
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 w-full flex items-center justify-between h-24 transition-all duration-300 relative">
-              {/* Main content (brand, nav, CTA) */}
-              <div className="flex items-center h-24 ml-[110px]">
+              {/* Main content (logo now beside BP Construction) */}
+              <div className="flex items-center h-24">
+                <img
+                  src="/bp_logo.jpg"
+                  alt="BP Construction Logo"
+                  className="rounded-lg shadow-xl bg-white p-2"
+                  style={{
+                    height: "80px",
+                    width: "80px",
+                    objectFit: "contain",
+                    marginTop: "-20px", // pop-out effect above row baseline
+                  }}
+                />
                 <span
                   className="font-bold text-black text-3xl transition-all duration-300"
                   style={{
@@ -60,7 +58,7 @@ export function Navigation({ currentPage, onPageChange }: NavigationProps) {
                       <button
                         key={item.name}
                         onClick={() => onPageChange(item.href)}
-                        className={`flex-1 relative inline-flex items-center justify-center px-4 py-2 text-xl font-bold transition-all duration-300 nav-anim-btn whitespace-nowrap
+                        className={`flex-1 relative inline-flex items-center justify-center px-4 py-2 text-xl font-normal transition-all duration-300 nav-anim-btn whitespace-nowrap
                           ${
                             currentPage === item.href
                               ? "text-black after:w-full"
@@ -113,7 +111,7 @@ export function Navigation({ currentPage, onPageChange }: NavigationProps) {
                     key={item.name}
                     as="button"
                     onClick={() => onPageChange(item.href)}
-                    className={`block w-full text-left border-l-4 py-4 pl-5 pr-4 text-lg font-bold transition-colors duration-300
+                    className={`block w-full text-left border-l-4 py-4 pl-5 pr-4 text-lg font-normal transition-colors duration-300
                       ${
                         currentPage === item.href
                           ? "border-yellow-400 text-yellow-400 bg-black"
