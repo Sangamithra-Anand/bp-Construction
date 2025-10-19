@@ -1,3 +1,4 @@
+import React from "react";
 import { ChevronRightIcon } from "@heroicons/react/20/solid";
 import {
   HomeIcon,
@@ -5,10 +6,66 @@ import {
   CogIcon,
 } from "@heroicons/react/24/outline";
 import { ImageWithFallback } from "../figma/ImageWithFallback";
+import CountUp from "react-countup";
+import { useInView } from "react-intersection-observer";
+
 
 interface HomePageProps {
   onPageChange: (page: string) => void;
 }
+
+interface StatsNumberProps {
+  end: number;
+  separator?: string;
+}
+
+const StatsNumber: React.FC<StatsNumberProps> = ({ end, separator = "," }) => {
+  const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.5 });
+  return (
+    <div ref={ref} className="text-4xl font-bold text-black">
+      {inView ? <CountUp end={end} duration={7} separator={separator} /> : 0}+
+    </div>
+  );
+};
+
+const StatsSection = () => (
+  <section style={{ backgroundColor: "#DAF0F7" }} className="py-16">
+    <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-black">
+      Why BP Construction?
+    </h2>
+    <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-y-12 gap-x-8 text-center">
+      <div>
+        <StatsNumber end={17} />
+        <div className="mt-2 text-base text-black">Years of Experience</div>
+        <StatsNumber end={4000} />
+        <div className="mt-2 text-base text-black">Construction Workers</div>
+      </div>
+      <div>
+        <StatsNumber end={1300} />
+        <div className="mt-2 text-base text-black">Completed Projects</div>
+        <StatsNumber end={8} separator="" />
+        <div className="mt-2 text-base text-black">
+          Offices
+          <br />
+          in 5 Cities
+        </div>
+      </div>
+      <div>
+        <StatsNumber end={300} />
+        <div className="mt-2 text-base text-black">Ongoing Projects</div>
+        <StatsNumber end={10} separator="" />
+        <div className="mt-2 text-base text-black">Years Structural Warranty</div>
+      </div>
+      <div>
+        <StatsNumber end={350} />
+        <div className="mt-2 text-base text-black">Full Time Employees</div>
+        <StatsNumber end={425} />
+        <div className="mt-2 text-base text-black">Quality Checks</div>
+      </div>
+    </div>
+  </section>
+);
+
 
 export function HomePage({ onPageChange }: HomePageProps) {
   const services = [
@@ -95,7 +152,7 @@ export function HomePage({ onPageChange }: HomePageProps) {
         <div className="mx-auto max-w-4xl px-6 py-32 sm:py-48 lg:py-56 lg:px-8">
           <div className="text-center">
             <h1 className="text-4xl font-bold tracking-tight text-white sm:text-6xl drop-shadow-lg">
-              Building Tomorrow's Infrastructure Today
+              Building Tomorrow&apos;s Infrastructure Today
             </h1>
             <p className="mt-6 text-lg leading-8 text-white drop-shadow-md">
               Professional construction services with 40+ years of excellence in
@@ -187,46 +244,8 @@ export function HomePage({ onPageChange }: HomePageProps) {
         </div>
       </div>
 
-      <section style={{ backgroundColor: "#DAF0F7" }} className="py-16">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-black">
-          Why BP Construction?
-        </h2>
-        <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-y-12 gap-x-8 text-center">
-          <div>
-            <div className="text-4xl font-bold text-black">17+</div>
-            <div className="mt-2 text-base text-black">Years of Experience</div>
-            <div className="mt-6 text-4xl font-bold text-black">4000+</div>
-            <div className="mt-2 text-base text-black">
-              Construction Workers
-            </div>
-          </div>
-          <div>
-            <div className="text-4xl font-bold text-black">1300+</div>
-            <div className="mt-2 text-base text-black">Completed Projects</div>
-            <div className="mt-6 text-4xl font-bold text-black">8</div>
-            <div className="mt-2 text-base text-black">
-              Offices
-              <br />
-              in 5 Cities
-            </div>
-          </div>
-          <div>
-            <div className="text-4xl font-bold text-black">300+</div>
-            <div className="mt-2 text-base text-black">Ongoing Projects</div>
-            <div className="mt-6 text-4xl font-bold text-black">10</div>
-            <div className="mt-2 text-base text-black">
-              Years Structural Warranty
-            </div>
-          </div>
-          <div>
-            <div className="text-4xl font-bold text-black">350+</div>
-            <div className="mt-2 text-base text-black">Full Time Employees</div>
-            <div className="mt-6 text-4xl font-bold text-black">425+</div>
-            <div className="mt-2 text-base text-black">Quality Checks</div>
-          </div>
-        </div>
-      </section>
-
+      {/* Stats Section */}
+      <StatsSection />
 
       {/* Latest Projects */}
       <div className="bg-[#F1F5F9] py-24 sm:py-32">
@@ -269,10 +288,7 @@ export function HomePage({ onPageChange }: HomePageProps) {
               className="inline-flex items-center gap-x-1.5 rounded-md bg-white px-3 py-2 text-sm font-semibold text-[#0A2540] shadow-sm ring-1 ring-inset ring-[#0A2540] hover:bg-white/70 transition-colors duration-200"
             >
               View All Projects
-              <ChevronRightIcon
-                className="-mr-0.5 h-5 w-5"
-                aria-hidden="true"
-              />
+              <ChevronRightIcon className="-mr-0.5 h-5 w-5" aria-hidden="true" />
             </button>
           </div>
         </div>
@@ -298,7 +314,7 @@ export function HomePage({ onPageChange }: HomePageProps) {
                 >
                   <figure className="rounded-2xl bg-[#F1F5F9] p-8 text-sm leading-6">
                     <blockquote className="text-[#4A5568]">
-                      <p>{"${testimonial.body}"}</p>
+                      <p>{testimonial.body}</p>
                     </blockquote>
                     <figcaption className="mt-6 flex items-center gap-x-4">
                       <ImageWithFallback

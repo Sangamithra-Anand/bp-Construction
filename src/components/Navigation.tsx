@@ -13,6 +13,7 @@ export function Navigation({ currentPage, onPageChange }: NavigationProps) {
     { name: "ABOUT US", href: "about" },
     { name: "SERVICES", href: "services" },
     { name: "PROJECTS", href: "projects" },
+    // { name: 'CAREERS', href: 'careers' },
     { name: "BLOG", href: "blog" },
     { name: "CONTACT", href: "contact" },
   ];
@@ -58,7 +59,7 @@ export function Navigation({ currentPage, onPageChange }: NavigationProps) {
                       <button
                         key={item.name}
                         onClick={() => onPageChange(item.href)}
-                        className={`flex-1 relative inline-flex items-center justify-center px-4 py-2 text-xl font-normal transition-all duration-300 nav-anim-btn whitespace-nowrap
+                        className={`flex-1 relative inline-flex items-center justify-center px-4 py-2 text-xl font-bold transition-all duration-300 nav-anim-btn whitespace-nowrap
                           ${
                             currentPage === item.href
                               ? "text-black after:w-full"
@@ -111,7 +112,7 @@ export function Navigation({ currentPage, onPageChange }: NavigationProps) {
                     key={item.name}
                     as="button"
                     onClick={() => onPageChange(item.href)}
-                    className={`block w-full text-left border-l-4 py-4 pl-5 pr-4 text-lg font-normal transition-colors duration-300
+                    className={`block w-full text-left border-l-4 py-4 pl-5 pr-4 text-lg font-bold transition-colors duration-300
                       ${
                         currentPage === item.href
                           ? "border-yellow-400 text-yellow-400 bg-black"
